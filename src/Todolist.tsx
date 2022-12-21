@@ -42,6 +42,10 @@ export function Todolist(props: PropsType) {
         </div>
         <div>
             <button onClick={() => {
+                props.changeFilter("three")
+            }}>3
+            </button>
+            <button onClick={() => {
                 props.changeFilter("all")
             }}>
                 All
