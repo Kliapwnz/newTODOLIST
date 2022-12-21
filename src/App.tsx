@@ -12,8 +12,7 @@ function App() {
     ]
 
     function removeTask(id: number) {
-        let resultTask = task.filter((e) => e.id !== id
-        )
+        let resultTask = task.filter(e=> e.id !== id)
     }
 
     return (
