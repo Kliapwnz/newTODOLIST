@@ -7,7 +7,7 @@ type PropsType = {
 
 }
 
-type TasksPropsType = {
+export type TasksPropsType = {
     id: number
     title: string
     isDone: boolean
