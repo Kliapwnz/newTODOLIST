@@ -3,6 +3,7 @@ import React from 'react';
 type PropsType = {
     title: string
     task: TasksPropsType[]
+    removeTask:(id:number)=>void
 }
 
 type TasksPropsType = {

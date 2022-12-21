@@ -10,9 +10,17 @@ function App() {
         {id: 3, title: "React", isDone: false},
     ]
 
+    function removeTask(id: number) {
+        let resultTask = task.filter(() => {
+        })
+    }
+
     return (
         <div className="App">
-            <Todolist title="What to learn" task={task}/>
+            <Todolist title="What to learn"
+                      task={task}
+                      removeTask={removeTask}
+            />
         </div>
     );
 }
