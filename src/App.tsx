@@ -126,8 +126,8 @@ function App() {
 
     return (
         <div className="App">
-            <Tasks tasks={data1}/>
-            <Tasks tasks={data2}/>
+            <Tasks title="What to do" tasks={data1.tasks} students={data1.students}/>
+            <Tasks title="What to learn" tasks={data2.tasks} students={data2.students}/>
         </div>
     );
 }
