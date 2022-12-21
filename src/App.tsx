@@ -19,6 +19,9 @@ function App() {
         setTask(task)
     }
 
+    function changeFilter(value:FilterValuesType){
+        setFilter(value)
+    }
     let taskForTodolist = task
     if(filter === "completed") {
         taskForTodolist = task.filter(t=>t.isDone === true)
@@ -33,6 +36,7 @@ function App() {
             <Todolist title="What to learn"
                       task={taskForTodolist}
                       removeTask={removeTask}
+                      changeFilter={changeFilter}
             />
         </div>
     );
