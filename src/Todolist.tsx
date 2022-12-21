@@ -4,6 +4,7 @@ type PropsType = {
     title: string
     task: TasksPropsType[]
     removeTask:(id:number)=>void
+
 }
 
 type TasksPropsType = {
