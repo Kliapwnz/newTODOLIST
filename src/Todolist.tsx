@@ -2,7 +2,7 @@ import React from 'react';
 
 type PropsType = {
     title: string
-    tasks: TasksPropsType[]
+    task: TasksPropsType[]
 }
 
 type TasksPropsType = {
@@ -22,8 +22,8 @@ export const Todolist = (props: PropsType) => {
             </div>
             <ul>
                 {
-                    props.tasks.map(e => <li>
-                        <button>X</button>
+                    props.task.map(e => <li>
+                        <button onClick={()=>{alert(e.id)}}>X</button>
                         <input type="checkbox" checked={e.isDone}/>
                         <span>{e.title}</span></li>)
                 }
