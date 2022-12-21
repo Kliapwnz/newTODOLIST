@@ -12,6 +12,7 @@ type PropsType = {
     tasks: Array<TaskType>
     removeTask: (taskId: number) => void
     changeFilter: (value: FilterValuesType) => void
+    deleteAllTasks:()=>void
 }
 
 export function Todolist(props: PropsType) {
@@ -30,7 +31,7 @@ export function Todolist(props: PropsType) {
                 </li>)
             }
         </ul>
-        <div><button>УДАЛИТЬ ВСЕ!!</button></div>
+        <div><button onClick={()=>{props.deleteAllTasks()}}>УДАЛИТЬ ВСЕ!!</button></div>
         <div>
             <button onClick={ () => { props.changeFilter("all") } }>
                 All
