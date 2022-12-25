@@ -46,6 +46,8 @@ function App() {
         if (status) {
             status.isDone = isDone
         }
+        let newStatus = [...tasks]
+        setTasks(newStatus)
     }
 
     return (
