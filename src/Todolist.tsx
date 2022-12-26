@@ -31,6 +31,10 @@ export function Todolist(props: PropsType) {
         }
     }
 
+    const onChangeStatusHandler = (tId: string, eventCurrentValue: boolean) => {
+        props.changeStatus(tId, eventCurrentValue)
+    }
+
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setTitle(e.currentTarget.value)
     }
@@ -61,14 +65,12 @@ export function Todolist(props: PropsType) {
             {
                 props.tasks.map(t => {
 
-                    const onChangeStatusHandler = (e: ChangeEvent<HTMLInputElement>) => {
-                        props.changeStatus(t.id, e.currentTarget.checked)
-                    }
+
 
                     const onClickHandler = () => props.removeTask(t.id)
 
                     return <li key={t.id} className={t.isDone ? "is-done": ""}>
-                        <input type="checkbox" checked={t.isDone} onChange={onChangeStatusHandler}/>
+                        <input type="checkbox" checked={t.isDone} onChange={(e: ChangeEvent<HTMLInputElement>)=>onChangeStatusHandler(t.id, e.currentTarget.checked)}/>
                         <span>{t.title}</span>
                         <button onClick={onClickHandler}>x</button>
                     </li>
