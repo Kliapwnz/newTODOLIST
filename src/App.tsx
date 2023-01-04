@@ -34,14 +34,13 @@ function App() {
         ]
     });
 
-    function removeTask(todolistId:string ,taskId: string) {
-       setTasks({...tasks, [todolistId]:tasks[todolistId].filter(e=>e.id !==taskId)})
+    function removeTask(todolistId: string, taskId: string) {
+        setTasks({...tasks, [todolistId]: tasks[todolistId].filter(e => e.id !== taskId)})
     }
 
-    function addTask(todolistId:string ,title: string) {
+    function addTask(todolistId: string, title: string) {
         let newTask = {id: v1(), title: title, isDone: false};
-        setTasks({...tasks, [todolistId]:[...tasks[todolistId], newTask]})
-        // setTasks(newTasks);
+        setTasks({...tasks, [todolistId]: [...tasks[todolistId], newTask]})
     }
 
     function changeStatus(taskId: string, isDone: boolean) {
