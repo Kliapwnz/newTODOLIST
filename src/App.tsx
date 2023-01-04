@@ -23,6 +23,7 @@ function App() {
         {id: v1(), title: "Rest API", isDone: false},
         {id: v1(), title: "GraphQL", isDone: false},
     ]);
+
     // let [filter, setFilter] = useState<FilterValuesType>("all");
 
 
@@ -46,8 +47,8 @@ function App() {
         setTasks([...tasks]);
     }
 
-    function changeFilter(todolistId:string, value: FilterValuesType) {
-        setTodolists(todolists.map(e=>e.id === todolistId ? {...e, filter:value} :e));
+    function changeFilter(todolistId: string, value: FilterValuesType) {
+        setTodolists(todolists.map(e => e.id === todolistId ? {...e, filter: value} : e));
     }
 
 
