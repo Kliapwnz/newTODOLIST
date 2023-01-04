@@ -90,7 +90,7 @@ function App() {
     }
 
     function changeFilter(todolistId: string, value: FilterValuesType) {
-        // setTodolists(todolists.map(el => el.id === todolistId ? {...el, filter: value} : el))
+        setTasks({...tasks,[todolistId]:{...tasks[todolistId],filter:value}})
     }
 
     return (
