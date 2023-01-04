@@ -30,7 +30,7 @@ function App() {
             {id:v1(), title:"Rest API2", isDone:false},
             {id:v1(), title:"GraphQL2", isDone:false},
         ]
-    })
+    });
 
     // let [tasks, setTasks] = useState([
     //     {id: v1(), title: "HTML&CSS", isDone: true},
