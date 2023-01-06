@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Site.module.css'
-import {Navigate, Route, Routes} from "react-router-dom";
+import {Navigate, NavLink, Route, Routes} from "react-router-dom";
 import {PageOne} from "./pages/PageOne";
 import {PageTwo} from "./pages/PageTwo";
 import {PageThree} from "./pages/PageThree";
@@ -13,7 +13,9 @@ export const Site = () => {
             <div className={styles.header}><h1>HEADER</h1></div>
             <div className={styles.body}>
                 <div className={styles.nav}>
-                    1234
+                    <div><NavLink to={"/page1"}>Page1</NavLink></div>
+                    <div><NavLink to={"/page2"}>Page1</NavLink></div>
+                    <div><NavLink to={"/page3"}>Page1</NavLink></div>
                 </div>
 
                 <div className={styles.content}>
