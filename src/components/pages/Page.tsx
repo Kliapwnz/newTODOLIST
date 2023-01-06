@@ -8,7 +8,6 @@ type PagePropsType={
 
 export const Page = (props:PagePropsType) => {
    const param=useParams()
-    console.log("params", param)
     return (
         <div>
             PAGE
