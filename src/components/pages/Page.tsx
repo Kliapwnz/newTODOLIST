@@ -10,7 +10,8 @@ export const Page = (props:PagePropsType) => {
    const param=useParams()
     return (
         <div>
-            PAGE
+            <div>{props.pages[Number(param.id)].heading}</div>
+            <div>{props.pages[Number(param.id)].about}</div>
         </div>
     );
 };
