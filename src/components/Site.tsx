@@ -14,8 +14,8 @@ export const Site = () => {
             <div className={styles.body}>
                 <div className={styles.nav}>
                     <div><NavLink to={"/page1"}>Page1</NavLink></div>
-                    <div><NavLink to={"/page2"}>Page1</NavLink></div>
-                    <div><NavLink to={"/page3"}>Page1</NavLink></div>
+                    <div><NavLink to={"/page2"}>Page2</NavLink></div>
+                    <div><NavLink to={"/page3"}>Page3</NavLink></div>
                 </div>
 
                 <div className={styles.content}>
