@@ -4,6 +4,7 @@ import {Navigate, Route, Routes} from "react-router-dom";
 import {PageOne} from "./pages/PageOne";
 import {PageTwo} from "./pages/PageTwo";
 import {PageThree} from "./pages/PageThree";
+import {Error404} from "./pages/Error404";
 
 
 export const Site = () => {
@@ -21,6 +22,7 @@ export const Site = () => {
                         <Route path={"/page1"} element={<PageOne/>}/>
                         <Route path={"/page2"} element={<PageTwo/>}/>
                         <Route path={"/page3"} element={<PageThree/>}/>
+                        <Route path={"/*"} element={<Error404/>}/>
                     </Routes>
                 </div>
             </div>
