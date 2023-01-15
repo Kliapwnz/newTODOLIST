@@ -99,5 +99,34 @@ export function Todolist(props: PropsType) {
 type AddItemForm = {}
 
 function AddItemForm(props: AddItemFormPropsType) {
-    return
+    let [title, setTitle] = useState("")
+    let [error, setError] = useState<string | null>(null)
+    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        setTitle(e.currentTarget.value)
+    }
+    const onKeyDownHandler = (e: KeyboardEvent<HTMLInputElement>) => {
+        setError(null);
+        if (e.key === "Enter") {
+            addTask();
+        }
+    }
+    const addTask = () => {
+        if (title.trim() !== "") {
+            props.addTask(title.trim(), props.id);
+            setTitle("");
+        } else {
+            setError("Title is required");
+        }
+    }
+    return (
+        <div>
+            <input value={title}
+                   onChange={onChangeHandler}
+                   onKeyDown={onKeyDownHandler}
+                   className={error ? "error" : ""}
+            />
+            <button onClick={addTask}>+</button>
+            {error && <div className="error-message">{error}</div>}
+        </div>
+    )
 }
