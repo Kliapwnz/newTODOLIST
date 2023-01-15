@@ -48,8 +48,8 @@ function App() {
     let todoListId2 = v1()
 
     let [todoLists, setTodoLists] = useState<Array<TodolistType>>([
-        {id: v1(), title: "What to learn", filter: "all"},
-        {id: v1(), title: "What to Buy", filter: "all"}
+        {id: todoListId1, title: "What to learn", filter: "all"},
+        {id: todoListId2, title: "What to Buy", filter: "all"}
     ])
     let [tasksObj, setTasksObj] = useState({
         [todoListId1]: [
@@ -80,6 +80,7 @@ function App() {
                     if (e.filter === "completed") {
                         tasksForTodolist = tasksForTodolist.filter(t => t.isDone === true);
                     }
+                    console.log({tasksForTodolist})
                     return (
                         <Todolist
                             key={e.id}
