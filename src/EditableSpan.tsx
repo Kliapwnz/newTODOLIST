@@ -10,7 +10,8 @@ export function EditableSpan(props: EditableSpanPropsType) {
     const activateEditMode = () => setEditMode(true)
 
 
-    return (
-        <span onDoubleClick={activateEditMode}>{props.title}</span>
+    return (editMode
+        ? <input value={props.title}/>
+        :<span onDoubleClick={activateEditMode}>{props.title}</span>
     )
 }
