@@ -5,13 +5,14 @@ type EditableSpanPropsType = {
 }
 
 export function EditableSpan(props: EditableSpanPropsType) {
-    let [editMode, setEditMode] = useState(false)
+    let [editMode, setEditMode] = useState(false);
 
-    const activateEditMode = () => setEditMode(true)
+    const activateEditMode = () => setEditMode(true);
+    const activateViewMode = () => setEditMode(false);
 
 
     return (editMode
-        ? <input value={props.title}/>
+        ? <input value={props.title} onBlur={activateViewMode}/>
         :<span onDoubleClick={activateEditMode}>{props.title}</span>
     )
 }
