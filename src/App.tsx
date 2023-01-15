@@ -45,10 +45,10 @@ function App() {
 
     }
 
-    let todoLists: Array<TodolistType> = [
+    let [todoLists, setTodoLists] = useState<Array<TodolistType>>([
         {id: v1(), title: "What to learn", filter: "active"},
         {id: v1(), title: "What to Buy", filter: "completed"}
-    ]
+    ])
 
 
     return (
