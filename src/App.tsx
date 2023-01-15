@@ -53,8 +53,8 @@ function App() {
         {id: todoListId2, title: "What to Buy", filter: "all"}
     ])
 
-    let removeTodolist=(todolistId: string)=> {
-        let filteredTodolists = todoLists.filter(e=>e.id !== todolistId)
+    let removeTodolist = (todolistId: string) => {
+        let filteredTodolists = todoLists.filter(e => e.id !== todolistId)
         setTodoLists(filteredTodolists)
 
         delete tasksObj[todolistId]
@@ -78,9 +78,19 @@ function App() {
         ],
     });
 
+    function addTodolist(title: string) {
+        let todoList: TodolistType = {
+            id: v1(),
+            filter: "all",
+            title: title
+        }
+        setTodoLists([todoList, ...todoLists])
+
+    }
+
     return (
         <div className="App">
-            <AddItemForm addItem={()=>{}} />
+            <AddItemForm addItem={addTodolist}/>
             {
                 todoLists.map((e) => {
                     let tasksForTodolist = tasksObj[e.id];
