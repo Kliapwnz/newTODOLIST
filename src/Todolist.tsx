@@ -70,5 +70,11 @@ export function Todolist(props: PropsType) {
     </div>
 }
 
+type EditableSpanPropsType={
+
+}
+function EditableSpan (props:EditableSpanPropsType){
+
+}
 
 
