@@ -21,29 +21,6 @@ type PropsType = {
 
 export function Todolist(props: PropsType) {
 
-    let [title, setTitle] = useState("")
-    let [error, setError] = useState<string | null>(null)
-
-    const addTask = () => {
-        if (title.trim() !== "") {
-            props.addTask(title.trim(), props.id);
-            setTitle("");
-        } else {
-            setError("Title is required");
-        }
-    }
-
-    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setTitle(e.currentTarget.value)
-    }
-
-    const onKeyDownHandler = (e: KeyboardEvent<HTMLInputElement>) => {
-        setError(null);
-        if (e.key === "Enter") {
-            addTask();
-        }
-    }
-
     const onAllClickHandler = () => props.changeFilter("all", props.id);
     const onActiveClickHandler = () => props.changeFilter("active", props.id);
     const onCompletedClickHandler = () => props.changeFilter("completed", props.id);
@@ -55,15 +32,7 @@ export function Todolist(props: PropsType) {
         <h3>{props.title}
             <button onClick={removeTodolist}>X</button>
         </h3>
-        <div>
-            <input value={title}
-                   onChange={onChangeHandler}
-                   onKeyDown={onKeyDownHandler}
-                   className={error ? "error" : ""}
-            />
-            <button onClick={addTask}>+</button>
-            {error && <div className="error-message">{error}</div>}
-        </div>
+        <AddItemForm addTask={props.addTask} id={props.id}/>
         <ul>
             {
                 props.tasks.map(t => {
@@ -96,7 +65,10 @@ export function Todolist(props: PropsType) {
     </div>
 }
 
-type AddItemForm = {}
+type AddItemFormPropsType = {
+    addTask:(title:string, todolistId:string)=>void
+    id:string
+}
 
 function AddItemForm(props: AddItemFormPropsType) {
     let [title, setTitle] = useState("")
