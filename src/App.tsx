@@ -22,8 +22,9 @@ function App() {
     function addTask(title: string, todolistId:string) {
         let task = {id: v1(), title: title, isDone: false};
         let tasks = tasksObj[todolistId]
-        let newTasks = [task, ...tasksObj];
-        setTasksObj(newTasks);
+        let newTasks = [task, ...tasks];
+        tasksObj[todolistId] =newTasks
+        setTasksObj({...tasksObj});
     }
 
     function changeStatus(taskId: string, isDone: boolean) {
