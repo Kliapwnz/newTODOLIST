@@ -12,37 +12,35 @@ type TodolistType = {
 
 function App() {
 
-    function removeTask(id: string, todolistId:string) {
-        let task = tasksObj[todolistId]
-        let filteredTasks = task.filter(t => t.id != id);
+    function removeTask(id: string, todolistId: string) {
+        let removedTask = tasksObj[todolistId]
+        let filteredTasks = removedTask.filter(t => t.id != id);
         tasksObj[todolistId] = filteredTasks
         setTasksObj({...tasksObj});
     }
 
-    function addTask(title: string, todolistId:string) {
-        let task = {id: v1(), title: title, isDone: false};
+    function addTask(title: string, todolistId: string) {
+        let newTask = {id: v1(), title: title, isDone: false};
         let tasks = tasksObj[todolistId]
-        let newTasks = [task, ...tasks];
-        tasksObj[todolistId] =newTasks
+        let newTasks = [newTask, ...tasks];
+        tasksObj[todolistId] = newTasks
         setTasksObj({...tasksObj});
     }
 
-    function changeStatus(taskId: string, isDone: boolean,todolistId:string) {
-        let tasks = tasksObj[todolistId]
-        let task = tasks.find(t => t.id === taskId);
+    function changeStatus(taskId: string, isDone: boolean, todolistId: string) {
+        let changeStatusTask = tasksObj[todolistId]
+        let task = changeStatusTask.find(t => t.id === taskId);
         if (task) {
             task.isDone = isDone;
             setTasksObj({...tasksObj});
         }
-
-
     }
 
     function changeFilter(value: FilterValuesType, todolistId: string) {
         let todolist = todoLists.find(e => e.id === todolistId)
         if (todolist) {
             todolist.filter = value
-            setTodoLists([...todoLists])
+            setTodoLists([...todoLists]);
         }
     }
 
@@ -67,8 +65,8 @@ function App() {
             {id: v1(), title: "Meat", isDone: false},
             {id: v1(), title: "Beer", isDone: false},
             {id: v1(), title: "Burger", isDone: false},
-        ]
-    })
+        ],
+    });
 
     return (
         <div className="App">
@@ -77,10 +75,10 @@ function App() {
                     let tasksForTodolist = tasksObj[e.id];
 
                     if (e.filter === "active") {
-                        tasksForTodolist = tasksObj[e.id].filter(t => t.isDone === false);
+                        tasksForTodolist = tasksForTodolist.filter(t => t.isDone === false);
                     }
                     if (e.filter === "completed") {
-                        tasksForTodolist = tasksObj[e.id].filter(t => t.isDone === true);
+                        tasksForTodolist = tasksForTodolist.filter(t => t.isDone === true);
                     }
                     return (
                         <Todolist

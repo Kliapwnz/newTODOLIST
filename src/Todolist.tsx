@@ -64,7 +64,7 @@ export function Todolist(props: PropsType) {
                 props.tasks.map(t => {
                     const onClickHandler = () => props.removeTask(t.id, props.id)
                     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-                        props.changeTaskStatus(t.id, e.currentTarget.checked, props.id);
+                        props.changeTaskStatus(t.id, e.currentTarget.checked,props.id);
                     }
 
                     return <li key={t.id} className={t.isDone ? "is-done" : ""}>
