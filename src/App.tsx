@@ -42,7 +42,11 @@ function App() {
     }
 
     function changeFilter(value: FilterValuesType, todolistId: string) {
-
+let todolist = todoLists.find(e=> e.id === todolistId)
+        if(todolist) {
+            todolist.filter = value
+            setTodoLists([...todoLists])
+        }
     }
 
     let [todoLists, setTodoLists] = useState<Array<TodolistType>>([
