@@ -10,8 +10,8 @@ type TodolistType = {
     title: string
     filter: FilterValuesType
 }
-type TaskStateType={
-    [key:string]:Array<TaskType>
+type TaskStateType = {
+    [key: string]: Array<TaskType>
 }
 
 function App() {
@@ -36,6 +36,15 @@ function App() {
         let task = changeStatusTask.find(t => t.id === taskId);
         if (task) {
             task.isDone = isDone;
+            setTasksObj({...tasksObj});
+        }
+    }
+
+    function changeTaskTitle(taskId: string, newTitle: string, todolistId: string) {
+        let changeStatusTask = tasksObj[todolistId]
+        let task = changeStatusTask.find(t => t.id === taskId);
+        if (task) {
+            task.title = newTitle;
             setTasksObj({...tasksObj});
         }
     }
@@ -90,7 +99,7 @@ function App() {
         setTodoLists([todoList, ...todoLists])
         setTasksObj({
             ...tasksObj,
-            [todoList.id]:[]
+            [todoList.id]: []
         })
     }
 
@@ -120,6 +129,7 @@ function App() {
                             changeTaskStatus={changeStatus}
                             filter={e.filter}
                             removeTodolist={removeTodolist}
+                            changeTaskTitle={changeTaskTitle}
                         />
                     )
                 })
