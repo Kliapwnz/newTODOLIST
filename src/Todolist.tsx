@@ -8,13 +8,13 @@ type TaskType = {
 }
 
 type PropsType = {
-    id:string
+    id: string
     title: string
     tasks: Array<TaskType>
-    removeTask: (taskId: string, todolistId:string) => void
-    changeFilter: (value: FilterValuesType,todolistId:string) => void
-    addTask: (title: string, todolistId:string) => void
-    changeTaskStatus: (taskId: string, isDone: boolean, todolistId:string) => void
+    removeTask: (taskId: string, todolistId: string) => void
+    changeFilter: (value: FilterValuesType, todolistId: string) => void
+    addTask: (title: string, todolistId: string) => void
+    changeTaskStatus: (taskId: string, isDone: boolean, todolistId: string) => void
     filter: FilterValuesType
 }
 
@@ -64,7 +64,7 @@ export function Todolist(props: PropsType) {
                 props.tasks.map(t => {
                     const onClickHandler = () => props.removeTask(t.id, props.id)
                     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-                        props.changeTaskStatus(t.id, e.currentTarget.checked,props.id);
+                        props.changeTaskStatus(t.id, e.currentTarget.checked, props.id);
                     }
 
                     return <li key={t.id} className={t.isDone ? "is-done" : ""}>
@@ -79,11 +79,14 @@ export function Todolist(props: PropsType) {
         </ul>
         <div>
             <button className={props.filter === 'all' ? "active-filter" : ""}
-                    onClick={onAllClickHandler}>All</button>
+                    onClick={onAllClickHandler}>All
+            </button>
             <button className={props.filter === 'active' ? "active-filter" : ""}
-                    onClick={onActiveClickHandler}>Active</button>
+                    onClick={onActiveClickHandler}>Active
+            </button>
             <button className={props.filter === 'completed' ? "active-filter" : ""}
-                    onClick={onCompletedClickHandler}>Completed</button>
+                    onClick={onCompletedClickHandler}>Completed
+            </button>
         </div>
     </div>
 }
