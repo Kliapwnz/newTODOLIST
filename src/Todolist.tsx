@@ -14,7 +14,7 @@ type PropsType = {
     tasks: Array<TaskType>
     removeTask: (taskId: string, todolistId: string) => void
     changeFilter: (value: FilterValuesType, todolistId: string) => void
-    addTask: (title: string, todolistId:string) => void
+    addTask: (title: string, todolistId: string) => void
     changeTaskStatus: (taskId: string, isDone: boolean, todolistId: string) => void
     filter: FilterValuesType
     removeTodolist: (todolistId: string) => void
@@ -29,7 +29,7 @@ export function Todolist(props: PropsType) {
         props.removeTodolist(props.id)
     }
 
-    const addTask =(title:string)=>{
+    const addTask = (title: string) => {
         props.addTask(title, props.id)
     }
 
@@ -70,10 +70,11 @@ export function Todolist(props: PropsType) {
     </div>
 }
 
-type EditableSpanPropsType={
-
+type EditableSpanPropsType = {
+    title: string
 }
-function EditableSpan (props:EditableSpanPropsType){
+
+function EditableSpan(props: EditableSpanPropsType) {
 
 }
 
