@@ -66,8 +66,5 @@ export function Todolist(props: PropsType) {
     </div>
 }
 
-type AddItemFormPropsType = {
-    addTask:(title:string, todolistId:string)=>void
-    id:string
-}
+
 

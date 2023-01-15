@@ -1,5 +1,10 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from "react";
 
+type AddItemFormPropsType = {
+    addTask:(title:string, todolistId:string)=>void
+    id:string
+}
+
 export function AddItemForm(props: AddItemFormPropsType) {
     let [title, setTitle] = useState("")
     let [error, setError] = useState<string | null>(null)
