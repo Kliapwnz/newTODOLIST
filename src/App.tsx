@@ -50,8 +50,8 @@ let todolist = todoLists.find(e=> e.id === todolistId)
     }
 
     let [todoLists, setTodoLists] = useState<Array<TodolistType>>([
-        {id: v1(), title: "What to learn", filter: "active"},
-        {id: v1(), title: "What to Buy", filter: "completed"}
+        {id: v1(), title: "What to learn", filter: "all"},
+        {id: v1(), title: "What to Buy", filter: "all"}
     ])
 
 
