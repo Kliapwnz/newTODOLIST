@@ -85,7 +85,10 @@ function App() {
             title: title
         }
         setTodoLists([todoList, ...todoLists])
-
+        setTasksObj({
+            ...tasksObj,
+            [todoList.id]:[]
+        })
     }
 
     return (
