@@ -4,7 +4,7 @@ import {TaskType, Todolist} from './Todolist';
 import {v1} from 'uuid';
 import {AddItemForm} from './AddItemForm';
 import {ButtonAppBar} from "./ButtonAppBar";
-import {Container, Grid} from "@mui/material";
+import {Container, Grid, Paper} from "@mui/material";
 
 export type FilterValuesType = "all" | "active" | "completed";
 type TodolistType = {
@@ -127,7 +127,7 @@ function App() {
         <div className="App">
             <ButtonAppBar/>
             <Container fixed>
-                <Grid container>
+                <Grid container style={{padding:"20px"}}>
             <AddItemForm addItem={addTodolist}/>
                 </Grid>
                 <Grid container spacing={3}>
@@ -144,6 +144,7 @@ function App() {
                     }
 
                     return <Grid item>
+                        <Paper style={{padding:"10px"}}>
                     <Todolist
                         key={tl.id}
                         id={tl.id}
@@ -158,6 +159,7 @@ function App() {
                         changeTaskTitle={changeTaskTitle}
                         changeTodolistTitle={changeTodolistTitle}
                     />
+                        </Paper>
                     </Grid>
                 })
             }
