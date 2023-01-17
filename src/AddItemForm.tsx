@@ -53,7 +53,7 @@ export function AddItemForm(props: AddItemFormPropsType) {
             onChange={onChangeHandler}
             onKeyPress={onKeyPressHandler}
             id="outlined-basic"
-            label={!!error ? "Title is required" : "Please type you name"}
+            label={error ? "Title is required" : "Please type you name"}
             variant="outlined"
             size="small"
             error={!!error}
