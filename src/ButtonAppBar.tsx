@@ -22,9 +22,9 @@ export function ButtonAppBar() {
     <MenuIcon />
     </IconButton>
     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-    News
+    my task
     </Typography>
-    <Button color="inherit">Login</Button>
+    <Button color="inherit">Samurai</Button>
         </Toolbar>
         </AppBar>
         </Box>
