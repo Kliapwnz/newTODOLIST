@@ -31,8 +31,8 @@ export function AddItemForm(props: AddItemFormPropsType) {
         }
     }
 
-    const buttonStyles={
-      maxWidth: '30px',
+    const buttonStyles = {
+        maxWidth: '30px',
         maxHeight: '30px',
         minWidth: '30px',
         minHeight: '30px',
