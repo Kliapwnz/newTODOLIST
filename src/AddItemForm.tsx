@@ -3,7 +3,6 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
 
-
 type AddItemFormPropsType = {
     addItem: (title: string) => void
 }
@@ -56,7 +55,9 @@ export function AddItemForm(props: AddItemFormPropsType) {
             id="outlined-basic"
             label="Outlined"
             variant="outlined"
-            size="small"/>
+            size="small"
+            error={!!error}
+        />
 
         <Button variant="contained"
                 onClick={addItem}
