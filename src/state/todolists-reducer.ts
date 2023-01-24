@@ -18,3 +18,12 @@ export const removeTodolistAC=(id:string)=>{
         payload:{id}
     }as const
 }
+type addTodolistACType=ReturnType<typeof addTodolistAC>
+export const addTodolistAC=(title:string)=>{
+    return {
+        type:"ADD-TODOLIST",
+        payload:{
+            title
+        }
+    }as const
+}
