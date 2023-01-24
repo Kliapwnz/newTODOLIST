@@ -20,7 +20,7 @@ type TasksStateType = {
 }
 
 
-function App() {
+export function App() {
     let todolistId1 = v1();
     let todolistId2 = v1();
 
@@ -178,5 +178,3 @@ function App() {
         </div>
     );
 }
-
-export default App;
