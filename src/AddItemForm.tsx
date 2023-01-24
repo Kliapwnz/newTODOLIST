@@ -1,6 +1,7 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
+import {IconButton, TextField} from "@mui/material";
+import {AddBox} from "@mui/icons-material";
+
 
 
 type AddItemFormPropsType = {
@@ -32,38 +33,17 @@ export function AddItemForm(props: AddItemFormPropsType) {
         }
     }
 
-    const buttonStyles = {
-        maxWidth: '38px',
-        maxHeight: '38px',
-        minWidth: '38px',
-        minHeight: '38px',
-        background: "coral"
-    }
-
-
     return <div>
-        {/*<input value={title}*/}
-        {/*       onChange={onChangeHandler}*/}
-        {/*       onKeyPress={onKeyPressHandler}*/}
-        {/*       className={error ? "error" : ""}*/}
-        {/*/>*/}
-
-        <TextField
-            value={title}
-            onChange={onChangeHandler}
-            onKeyPress={onKeyPressHandler}
-            id="outlined-basic"
-            label={error ? "Title is required" : "Please type you Title"}
-            variant="outlined"
-            size="small"
-            error={!!error}
+        <TextField variant="outlined"
+                   error={!!error}
+                   value={title}
+                   onChange={onChangeHandler}
+                   onKeyPress={onKeyPressHandler}
+                   label="Title"
+                   helperText={error}
         />
-
-        <Button variant="contained"
-                onClick={addItem}
-                style={buttonStyles}
-        >+</Button>
-
-
+        <IconButton color="primary" onClick={addItem}>
+            <AddBox />
+        </IconButton>
     </div>
 }
