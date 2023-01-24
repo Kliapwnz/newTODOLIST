@@ -8,12 +8,10 @@ export const TodolistsReducer=(state:TodolistType[], action:any)=>{
         default: return state
     }
 }
-
+type removeTodolistACType= ReturnType<typeof removeTodolistAC>
 export const removeTodolistAC=(id:string)=>{
     return{
         type: 'REMOVE-TODOLIST',
-        payload:{
-            id
-        }
+        payload:{id}
     }as const
 }
