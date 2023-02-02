@@ -18,6 +18,9 @@ export const userReducer = (state: StateType, action: ActionType):StateType => {
         case "INCREMENT-CHILDREN-COUNT":
             newState.childrenCount = state.childrenCount + 1;
             return newState;
+        case "CHANGE-NAME":
+            newState.name = state.name
+            return newState
         default:
             throw new Error("Stop this")
     }
