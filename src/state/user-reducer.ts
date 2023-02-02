@@ -9,7 +9,7 @@ type ActionType = {
 }
 
 
-export const userReducer = (state: StateType, action: ActionType) => {
+export const userReducer = (state: StateType, action: ActionType):StateType => {
     let newState = {...state}
     switch (action.type) {
         case "INCREMENT-AGE":
