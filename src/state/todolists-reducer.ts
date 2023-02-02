@@ -18,6 +18,13 @@ export const todolistsReducer = (state: TodolistType[], action: ActionType): Tod
                 filter: "all"
             }]
         }
+        case "CHANGE-TODOLIST-TITLE": {
+            const todolist = state.find(el=>el.id === action.id)
+            if(todolist){
+                todolist.title = action.title
+            }
+            return [...state]
+        }
         default:
             throw new Error("Stop it")
     }
